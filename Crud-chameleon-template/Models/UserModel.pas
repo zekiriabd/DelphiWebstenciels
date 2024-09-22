@@ -12,10 +12,15 @@ type
     property Id: Integer read fId write fId;
     property FirstName: String read fFirstName write fFirstName;
     property LastName: String read fLastName write fLastName;
-    constructor Create(Id: Integer; FirstName, LastName: String); reintroduce;
+    constructor Create(); reintroduce; overload;
+    constructor Create(Id: Integer; FirstName, LastName: String); reintroduce; overload;
   end;
 
 implementation
+constructor TUser.Create();
+begin
+  inherited Create;
+end;
 
 constructor TUser.Create(Id:Integer;FirstName, LastName: String);
 begin

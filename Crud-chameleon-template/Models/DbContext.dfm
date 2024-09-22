@@ -19,6 +19,7 @@ object Db: TDb
     Top = 8
   end
   object UserModel: TFDQuery
+    IndexFieldNames = 'UserId'
     Connection = Conn
     SQL.Strings = (
       ' SELECT [UserId]'
@@ -47,6 +48,14 @@ object Db: TDb
       item
         Name = 'UserId'
         DataType = ftInteger
+      end
+      item
+        Name = 'FirstName'
+        DataType = ftString
+      end
+      item
+        Name = 'LastName'
+        DataType = ftString
       end>
   end
 end

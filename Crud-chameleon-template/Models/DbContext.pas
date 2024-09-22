@@ -25,7 +25,8 @@ type
     { Déclarations privées }
   public
     { Déclarations publiques }
-    procedure Delete(const UserId: Integer);
+    procedure UserDelete(const UserId: Integer);
+    procedure UserUpdate(const User: TUser);
   end;
 
 var
@@ -41,12 +42,35 @@ System.IniFiles;
 
 {$R *.dfm}
 
-procedure TDb.Delete(const UserId: Integer);
+{procedure TDb.SelectById(const UserId: Integer);
 begin
-  UserQuery.SQL.Text := 'Delete FROM [test].[dbo].[User]  where  [UserId] = :UserId';
+  UserQuery.SQL.Text := 'Select * FROM [User]  where  [UserId] = :UserId';
+  UserQuery.ParamByName('UserId').AsInteger := UserId;
+  UserQuery.;
+end; }
+
+
+procedure TDb.UserUpdate(const User: TUser);
+begin
+UserQuery.SQL.Text := 'UPDATE [User] ' +
+                      'SET FirstName = :FirstName, ' +
+                      '    LastName  = :LastName ' +
+                      'WHERE UserId  = :UserId';
+
+UserQuery.ParamByName('FirstName').AsString := User.FirstName;
+UserQuery.ParamByName('LastName').AsString := User.LastName;
+UserQuery.ParamByName('UserId').AsInteger := User.Id;
+
+UserQuery.ExecSQL;
+end;
+
+procedure TDb.UserDelete(const UserId: Integer);
+begin
+  UserQuery.SQL.Text := 'Delete FROM [User] where [UserId] = :UserId';
   UserQuery.ParamByName('UserId').AsInteger := UserId;
   UserQuery.ExecSQL;
 end;
+
 
 procedure TDb.DataModuleCreate(Sender: TObject);
 var

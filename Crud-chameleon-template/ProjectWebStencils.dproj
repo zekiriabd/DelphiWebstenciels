@@ -234,6 +234,7 @@
             <ResourceId>JpgImage_10</ResourceId>
         </RcItem>
         <None Include="wwwroot\Views\Home\usersGridComp.html"/>
+        <None Include="wwwroot\Views\Home\userEdit.html"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -282,6 +283,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="wwwroot\Views\Home\index.html" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="wwwroot\Views\Home\userEdit.html" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

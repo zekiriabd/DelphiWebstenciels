@@ -11,11 +11,16 @@ type
     UsersView: TWebStencilsProcessor;
     WebFileDispatcher1: TWebFileDispatcher;
     UsersGridComp: TWebStencilsProcessor;
+    UserEdit: TWebStencilsProcessor;
     procedure PrincipalControllerIndexPageAction(Sender: TObject;
       Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
     procedure PrincipalControllerUsersAction(Sender: TObject;
       Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
     procedure PrincipalControllerUserDeleletAction(Sender: TObject;
+      Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
+    procedure PrincipalControllerUserPostAction(Sender: TObject;
+      Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
+    procedure PrincipalControllerUserEditAction(Sender: TObject;
       Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
   private
     FVersion: string;
@@ -53,7 +58,7 @@ procedure TPrincipalController.PrincipalControllerUserDeleletAction(
   var Handled: Boolean);
 begin
     var UserId := Request.QueryFields.Values['id'];
-      DB.Delete(UserId.ToInteger());
+      DB.UserDelete(UserId.ToInteger());
        try
            Response.Content := UsersGridComp.Content;
       except
@@ -61,6 +66,87 @@ begin
           Response.Content := 'wspAccessDenied 405';
       end;
 end;
+
+procedure TPrincipalController.PrincipalControllerUserEditAction(
+  Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+  var Handled: Boolean);
+begin
+ var UserId := Request.QueryFields.Values['id'];
+ Db.UserModel.Open();
+ try
+   if (UserId <> '0') then
+   begin
+      if not (Db.UserModel.FindKey([UserId])) then
+         Response.Content := 'not found 501';
+   end
+   else
+        Db.UserModel.Insert;
+       //WebStencilsEngine1.AddVar('User', nil, False);
+
+          try
+          if not WebStencilsEngine1.HasVar('User') then
+             WebStencilsEngine1.AddVar('User', Db.UserModel, True);
+
+          Response.Content := '<div id="user-content">' + UserEdit.Content + '</div>';
+          except
+          on E:EWebStencilsLoginRequired do
+            Response.Content := 'wspAccessDenied 405';
+          end;
+  finally
+       Db.UserModel.close();
+       Handled := True;
+  end;
+end;
+
+
+procedure TPrincipalController.PrincipalControllerUserPostAction(
+  Sender: TObject; Request: TWebRequest; Response: TWebResponse;
+  var Handled: Boolean);
+
+begin
+  {var user := UserModel.TUser.Create;
+  user.FirstName := Request.ContentFields.Values['firstName'];
+  user.LastName := Request.ContentFields.Values['lastName'];
+  user.Id := Request.QueryFields.Values['id'].ToInteger();
+
+  DB.UserUpdate(user);
+ }
+ try
+    try
+    var UserId := Request.QueryFields.Values['id'];
+     Db.UserModel.Open();
+
+   if (UserId <> '-1') then
+   begin
+
+    Db.UserModel.FindKey([UserId]);
+    Db.UserModel.Edit;
+    Db.UserModelFirstName.Value :=  Request.ContentFields.Values['firstName'];
+    Db.UserModelLastName.Value  :=  Request.ContentFields.Values['lastName'];
+    Db.UserModel.Post;
+
+   end
+   else
+   begin
+
+      Db.UserModel.Insert;
+      Db.UserModelFirstName.Value :=  Request.ContentFields.Values['firstName'];
+      Db.UserModelLastName.Value  :=  Request.ContentFields.Values['lastName'];
+      Db.UserModel.Post;
+   end;
+
+    Response.Content := '<div class="table-responsive" id="user-list">'+UsersGridComp.Content +'</div>';
+      except
+        on E:EWebStencilsLoginRequired do
+          Response.Content := 'wspAccessDenied 405';
+      end;
+  finally
+       Db.UserModel.close();
+       Handled := True;
+  end;
+end;
+
+
 
 procedure TPrincipalController.PrincipalControllerUsersAction(Sender: TObject;
   Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);

@@ -19,9 +19,16 @@ object PrincipalController: TPrincipalController
       OnAction = PrincipalControllerUserDeleletAction
     end
     item
-      MethodType = mtPut
-      Name = 'UserUpdate'
+      MethodType = mtPost
+      Name = 'UserPost'
       PathInfo = '/user'
+      OnAction = PrincipalControllerUserPostAction
+    end
+    item
+      MethodType = mtPut
+      Name = 'UserEdit'
+      PathInfo = '/user'
+      OnAction = PrincipalControllerUserEditAction
     end>
   Height = 452
   Width = 725
@@ -106,7 +113,13 @@ object PrincipalController: TPrincipalController
   object UsersGridComp: TWebStencilsProcessor
     Engine = WebStencilsEngine1
     InputFileName = 'Views/Home/usersGridComp.html'
-    Left = 144
+    Left = 160
+    Top = 80
+  end
+  object UserEdit: TWebStencilsProcessor
+    Engine = WebStencilsEngine1
+    InputFileName = 'Views/Home/userEdit.html'
+    Left = 240
     Top = 80
   end
 end
