@@ -30,11 +30,11 @@ WORKDIR /wwwroot
 COPY . .
 
 # Donner les permissions d'exécution à l'exécutable de l'application
-RUN chmod +x ./ProjectWebStencils.exe
+RUN chmod +x ./wwwroot/ProjectWebStencils.exe
 
 # Exposer les ports nécessaires
 EXPOSE 80
 EXPOSE 443
 
 # Lancer Xvfb en arrière-plan puis exécuter l'application avec Wine
-ENTRYPOINT ["sh", "-c", "Xvfb :99 -screen 0 1024x768x16 & DISPLAY=:99 wine ./ProjectWebStencils.exe -no-gui"]
+ENTRYPOINT ["sh", "-c", "Xvfb :99 -screen 0 1024x768x16 & DISPLAY=:99 wine ./wwwroot/ProjectWebStencils.exe -no-gui"]
