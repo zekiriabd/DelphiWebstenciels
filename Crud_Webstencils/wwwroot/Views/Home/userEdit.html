@@ -1,0 +1,25 @@
+
+
+        <h1>Edit User Information</h1>
+
+        <!-- <form action="/user?id=@User.UserID" method="POST">  </form>-->
+        <form
+         hx-post="/user?id=@User.UserID"
+         hx-target="#user-content"
+         hx-swap="outerHTML">
+                <label for="firstName">Name:</label>
+                <div class="input-group">
+
+    @if (User = nil) {
+        <input type="text" id="firstName" name="firstName" value="" placeholder="First Name" required>
+        <input type="text" id="lastName" name="lastName" value="" placeholder="Last Name" required>
+    }
+    @else {
+        <input type="text" id="firstName" name="firstName" value="@User.FirstName" placeholder="First Name" required>
+        <input type="text" id="lastName" name="lastName" value="@User.LastName" placeholder="Last Name" required>
+    }
+
+                </div>
+
+  <button type="submit">Save</button>
+</form>

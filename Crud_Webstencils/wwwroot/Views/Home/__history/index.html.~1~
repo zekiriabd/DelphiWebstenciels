@@ -1,0 +1,5 @@
+@LayoutPage Views/Shared/layout.html
+
+<h1>Index page </h1>
+
+<a  href="/user" >Go to User List</a>

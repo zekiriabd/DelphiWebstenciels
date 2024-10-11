@@ -29,6 +29,18 @@ object PrincipalController: TPrincipalController
       Name = 'UserEdit'
       PathInfo = '/user'
       OnAction = PrincipalControllerUserEditAction
+    end
+    item
+      MethodType = mtGet
+      Name = 'Login'
+      PathInfo = '/login'
+      OnAction = PrincipalControllerLoginAction
+    end
+    item
+      MethodType = mtPost
+      Name = 'LoginPost'
+      PathInfo = '/login'
+      OnAction = PrincipalControllerLoginPostAction
     end>
   Height = 452
   Width = 725
@@ -121,5 +133,11 @@ object PrincipalController: TPrincipalController
     InputFileName = 'Views/Home/userEdit.html'
     Left = 240
     Top = 80
+  end
+  object LoginView: TWebStencilsProcessor
+    Engine = WebStencilsEngine1
+    InputFileName = 'Views/login.html'
+    Left = 72
+    Top = 152
   end
 end

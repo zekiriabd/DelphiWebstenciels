@@ -5,13 +5,16 @@ object Db: TDb
   Width = 701
   object Conn: TFDConnection
     Params.Strings = (
-      'SERVER=LAPTOP-61VJQ0J4'
-      'OSAuthent=Yes'
+      'Server=softwebsqlserver.database.windows.net'
+      'OSAuthent=No'
       'ApplicationName=Enterprise/Architect/Ultimate'
       'Workstation=LAPTOP-61VJQ0J4'
       'Encrypt=Optional'
       'MARS=yes'
-      'DATABASE=test'
+      'DATABASE=azuresqldatabase'
+      'User_Name=softwebAdmin'
+      'Password=Talage2002.'
+      'Pooled=softwebsqlserver.database.windows.net'
       'DriverID=MSSQL')
     Connected = True
     LoginPrompt = False
@@ -25,7 +28,7 @@ object Db: TDb
       ' SELECT [UserId]'
       '      ,[FirstName]'
       '      ,[LastName]'
-      '  FROM [test].[dbo].[User]')
+      '  FROM [dbo].[User]')
     Left = 224
     Top = 40
     object UserModelUserId: TFDAutoIncField

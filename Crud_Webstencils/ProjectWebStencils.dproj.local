@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/02/11 10:01:02.000.021,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\Unit2.pas</Transaction>
+    <Transaction>2024/08/21 17:52:46.000.193,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\Unit2.pas</Transaction>
+    <Transaction>2024/09/16 21:04:33.000.680,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst1.pas</Transaction>
+    <Transaction>2024/09/16 21:04:33.000.155,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/10/03 20:06:51.000.886,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/10/03 20:06:52.000.074,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst1.pas</Transaction>
+    <Transaction>2024/10/04 12:07:09.000.679,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst1.pas</Transaction>
+    <Transaction>2024/10/04 12:07:09.000.331,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/10/04 12:07:28.000.269,C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst1.pas=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst.pas</Transaction>
+    <Transaction>2024/10/04 12:17:11.000.787,C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.dfm=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\WebPrograme.dfm</Transaction>
+    <Transaction>2024/10/04 12:17:11.000.787,C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.pas=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\WebPrograme.pas</Transaction>
+    <Transaction>2024/10/04 12:18:03.000.404,C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\Project2.dproj=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\ProjectWebStencils.dproj</Transaction>
+    <Transaction>2024/10/04 12:18:44.000.234,=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\wwwroot\Views\Shared\Layout.html</Transaction>
+    <Transaction>2024/10/04 12:19:16.000.039,=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Models\UserModel.pas</Transaction>
+    <Transaction>2024/10/04 12:19:47.000.882,=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Unit1.pas</Transaction>
+    <Transaction>2024/10/04 12:19:57.000.294,C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Unit1.dfm=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Models\DbContext.dfm</Transaction>
+    <Transaction>2024/10/04 12:19:57.000.294,C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Unit1.pas=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Models\DbContext.pas</Transaction>
+    <Transaction>2024/10/04 12:21:25.000.471,C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\WebPrograme.dfm=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Controllers\PrincipalControllers.dfm</Transaction>
+    <Transaction>2024/10/04 12:21:25.000.471,C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\WebPrograme.pas=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Controllers\PrincipalControllers.pas</Transaction>
+    <Transaction>2024/10/04 14:34:35.000.825,=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Unit1.pas</Transaction>
+    <Transaction>2024/10/04 14:34:43.000.971,C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Models\DbContext.pas=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Unit1.pas</Transaction>
+    <Transaction>2024/10/04 14:34:43.000.971,C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Models\DbContext.dfm=C:\DEV\Softwe3\DelphiWebstenciels\Crud_Webstencils\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

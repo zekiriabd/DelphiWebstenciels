@@ -235,6 +235,8 @@
         </RcItem>
         <None Include="wwwroot\Views\Home\usersGridComp.html"/>
         <None Include="wwwroot\Views\Home\userEdit.html"/>
+        <None Include="wwwroot\Views\login.html"/>
+        <None Include="wwwroot\Views\Shared\AuthLayout.html"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -306,7 +308,19 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="wwwroot\Views\Shared\AuthLayout.html" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="wwwroot\Views\Shared\Layout.html" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="wwwroot\Views\login.html" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

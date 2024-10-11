@@ -1,0 +1,46 @@
+﻿   <a
+        href="/user?id=0"
+        hx-put="/user?id=0"
+        hx-target="#user-list"
+        hx-swap="outerHTML"
+        class="btn btn-danger btn-sm">
+          <i class="fa fa-trash"></i> Add
+        </a>
+	<table class="table table-bordered mb-0">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+                                <th>#</th>
+							</tr>
+						</thead>
+						<tbody>
+
+
+	@foreach Users {
+    <tr>
+      <td>@loop.UserID</td>
+      <td>@loop.FirstName</td>
+      <td>@loop.LastName</td>
+      <td>
+         <a
+        href="/user?id=@loop.UserID"
+        hx-put="/user?id=@loop.UserID"
+        hx-target="#user-list"
+        hx-swap="outerHTML"
+        class="btn btn-primary btn-sm">
+          <i class="fa fa-trash"></i> Edit
+        </a>
+        <a
+        href="/user?id=@loop.UserID"
+        hx-delete="/user?id=@loop.UserID"
+        hx-target="#user-list"
+        hx-swap="outerHTML"
+        class="btn btn-danger btn-sm">
+          <i class="fa fa-trash"></i> Delete
+        </a></td>
+    </tr>
+  }
+							</tbody>
+					</table>
