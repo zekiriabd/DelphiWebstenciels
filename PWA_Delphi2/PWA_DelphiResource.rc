@@ -1,0 +1,3 @@
+PngImage_1 RCDATA "wwwroot\\favicon.png"
+PngImage_2 RCDATA "wwwroot\\icon-192.png"
+PngImage_3 RCDATA "wwwroot\\icon-512.png"

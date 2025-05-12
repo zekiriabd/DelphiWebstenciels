@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/02/11 10:01:02.000.021,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\Unit2.pas</Transaction>
+    <Transaction>2024/08/21 17:52:46.000.193,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\Unit2.pas</Transaction>
+    <Transaction>2024/09/16 21:04:33.000.680,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst1.pas</Transaction>
+    <Transaction>2024/09/16 21:04:33.000.155,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/10/03 20:06:51.000.886,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/10/03 20:06:52.000.074,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst1.pas</Transaction>
+    <Transaction>2025/05/11 22:14:35.000.528,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.pas</Transaction>
+    <Transaction>2025/05/11 22:14:35.000.780,=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst1.pas</Transaction>
+    <Transaction>2025/05/11 22:15:52.000.592,C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.dfm=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\PrincipalControllers.dfm</Transaction>
+    <Transaction>2025/05/11 22:15:52.000.592,C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebModuleUnit1.pas=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\PrincipalControllers.pas</Transaction>
+    <Transaction>2025/05/11 22:16:22.000.325,C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\ServerConst1.pas=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\WebPrograme.pas</Transaction>
+    <Transaction>2025/05/11 22:16:41.000.621,C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\Project2.dproj=C:\Users\zekir\OneDrive\Documents\Embarcadero\Studio\Projets\PWA_Delphi.dproj</Transaction>
+    <Transaction>2025/05/11 22:21:01.000.163,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\Controllers\PrincipalControllers.pas</Transaction>
+    <Transaction>2025/05/11 22:21:14.000.011,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\Models\DbContext.pas</Transaction>
+    <Transaction>2025/05/11 22:21:31.000.078,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\Views\Shared\Layout.html</Transaction>
+    <Transaction>2025/05/11 22:21:31.000.128,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\Views\Shared\navMenu.html</Transaction>
+    <Transaction>2025/05/11 22:21:31.000.030,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\Views\Shared\AuthLayout.html</Transaction>
+    <Transaction>2025/05/11 22:21:45.000.148,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\Views\Pages\index.html</Transaction>
+    <Transaction>2025/05/11 22:22:44.000.428,C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\Models\DbContext.pas=</Transaction>
+    <Transaction>2025/05/12 08:32:52.000.649,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\Dockerfile</Transaction>
+    <Transaction>2025/05/12 08:32:54.000.396,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\favicon.png</Transaction>
+    <Transaction>2025/05/12 08:32:55.000.945,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\icon-512.png</Transaction>
+    <Transaction>2025/05/12 08:32:55.000.138,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\icon-192.png</Transaction>
+    <Transaction>2025/05/12 08:32:56.000.684,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\manifest.webmanifest</Transaction>
+    <Transaction>2025/05/12 08:33:11.000.195,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\service-worker.js</Transaction>
+    <Transaction>2025/05/12 13:11:44.000.534,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\css\app.css</Transaction>
+    <Transaction>2025/05/12 22:19:32.873,=C:\DEV\Softwe3\DelphiWebstenciels\PWA_Delphi2\wwwroot\lib\bootstrap\dist\css\bootstrap.css</Transaction>
+  </Transactions>
+</BorlandProject>
