@@ -1,0 +1,22 @@
+﻿@LayoutPage ./app
+
+@ExtraHeader {
+    <link rel="stylesheet" href="./Components/Layout/mainLayout/mainLayout.css" />
+    <link rel="stylesheet" href="./Components/Layout/navmenu/navmenu.css" />
+}
+
+<div class="page">
+    <div class="sidebar">
+        @Import ./Components/layout/navmenu/navmenu
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docwiki.embarcadero.com/RADStudio/Athens/en/WebStencils" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @RenderBody
+        </article>
+    </main>
+</div>

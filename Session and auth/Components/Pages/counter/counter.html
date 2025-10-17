@@ -1,0 +1,25 @@
+﻿@LayoutPage ./Components/layout/mainLayout/mainLayout
+
+@page.counter
+
+@ExtraHeader {
+    <title>Counter</title>
+}
+
+<h1>Counter</h1>
+
+<div>
+  <p role="status">
+    Current count: <span id="counter-content">@App.val</span>
+  </p>
+
+  <button class="waves-effect waves-light btn blue darken-1"
+    hx-put="/counter?val=@App.val"
+    hx-target="#counter-content"
+    hx-swap="innerHTML">
+    Click me
+  </button>
+</div>
+
+
+

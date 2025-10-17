@@ -1,0 +1,49 @@
+﻿<style>
+.sidenav {
+   width: 400px !important;
+}
+ .circle{
+      width: 100px !important;
+      height: 100px !important;
+      border-radius: 50% !important;
+      justify-self: center;
+    }
+     .bg-img {
+     background-image: url('images/bgimg.png'); /* Lien vers votre image */
+     background-size: cover; /* Ajuste l'image pour couvrir toute la div */
+     background-position: center; /* Centre l'image */
+     background-repeat: no-repeat; /* Évite la répétition */
+     text-align: center;
+ }
+</style>
+  <nav>
+    <div class="nav-wrapper">
+      <!--<a href="#" class="brand-logo">Logo</a>-->
+      <a href="#" data-target="slide-out" class="sidenav-trigger">
+      <i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!-- Side Navigation -->
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view bg-img">
+
+        <img class="circle" src="/pictures/user.png">
+        <span class="name">John Doe</span>
+
+      </div>
+    </li>
+
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+
+  <!-- jQuery init script -->
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+  </script>

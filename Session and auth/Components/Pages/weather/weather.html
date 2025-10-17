@@ -1,0 +1,40 @@
+﻿@LayoutPage ./Components/layout/mainLayout/mainLayout
+
+@page.weather
+
+@ExtraHeader {
+    <title>Weather</title>
+}
+
+<h1>Weather</h1>
+
+<p>This component demonstrates showing data.</p>
+@if (forecasts = nil)
+{
+    <p><em>Loading...</em></p>
+}
+@else
+{
+  <table class="striped">
+      <thead>
+          <tr>
+              <th>Date</th>
+              <th aria-label="Temperature in Celsius">Temp. (C)</th>
+              <th aria-label="Temperature in Fahrenheit">Temp. (F)</th>
+              <th>Summary</th>
+          </tr>
+      </thead>
+      <tbody>
+          @ForEach (var forecast in forecasts)
+          {
+              <tr>
+                  <td>@forecast.Date</td>
+                  <td>@forecast.TemperatureC</td>
+                  <td>@forecast.TemperatureF</td>
+                  <td>@forecast.Summary</td>
+              </tr>
+          }
+      </tbody>
+  </table>
+}
+
