@@ -1,39 +1,45 @@
-object WebModule1: TWebModule1
+object Controller: TController
   Actions = <
     item
       Name = 'Home'
       PathInfo = '/'
-      OnAction = WebModule1HomeAction
+      OnAction = HomeAction
     end
     item
       Name = 'Login'
       PathInfo = '/login'
-      OnAction = WebModule1LoginAction
+      OnAction = LoginAction
     end
     item
       Name = 'Forbidden'
       PathInfo = '/forbidden'
-      OnAction = WebModule1ForbiddenAction
+      OnAction = ForbiddenAction
     end
     item
       Name = 'UserPage'
       PathInfo = '/admin/users'
-      OnAction = WebModule1UserPageAction
-    end
-    item
-      Name = 'Counter'
-      PathInfo = '/counter'
-      OnAction = WebModule1CounterAction
+      OnAction = UserPageAction
     end
     item
       Name = 'Weather'
       PathInfo = '/weather'
-      OnAction = WebModule1WeatherAction
+      OnAction = WeatherAction
+    end
+    item
+      MethodType = mtGet
+      Name = 'Counter'
+      PathInfo = '/counter'
+      OnAction = CounterAction
+    end
+    item
+      MethodType = mtPost
+      Name = 'CounterPost'
+      PathInfo = '/counter'
+      OnAction = CounterPostAction
     end>
   Height = 382
   Width = 348
   object WebSessionManager: TWebSessionManager
-    OnCreated = WebSessionManagerCreated
     Left = 256
     Top = 8
   end

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <namespace name="WebModuleUnit1" platform="Win32">
-  <class name="TWebModule1" file="WebModuleUnit1.pas" line="11">
+  <class name="TController" file="WebModuleUnit1.pas" line="12">
     <ancestor name="TWebModule" namespace="Web.HTTPApp">
       <methodref name="Create" visibility="public" procflags="constructor override">
       </methodref>
@@ -440,24 +440,17 @@
       </ancestor>
     </ancestor>
     <members>
-      <field name="WebSessionManager" type="TWebSessionManager" visibility="published" size="4" offset="184" file="WebModuleUnit1.pas" line="12" />
-      <field name="HomePage" type="TWebStencilsProcessor" visibility="published" size="4" offset="188" file="WebModuleUnit1.pas" line="13" />
-      <field name="WebFormsAuthenticator" type="TWebFormsAuthenticator" visibility="published" size="4" offset="192" file="WebModuleUnit1.pas" line="14" />
-      <field name="LoginPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="196" file="WebModuleUnit1.pas" line="15" />
-      <field name="WebAuthorizer" type="TWebAuthorizer" visibility="published" size="4" offset="200" file="WebModuleUnit1.pas" line="16" />
-      <field name="WebFileDispatcher" type="TWebFileDispatcher" visibility="published" size="4" offset="204" file="WebModuleUnit1.pas" line="17" />
-      <field name="ForbiddenPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="208" file="WebModuleUnit1.pas" line="18" />
-      <field name="UserPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="212" file="WebModuleUnit1.pas" line="19" />
-      <field name="CounterPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="216" file="WebModuleUnit1.pas" line="20" />
-      <field name="WeatherPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="220" file="WebModuleUnit1.pas" line="21" />
-      <procedure name="WebSessionManagerCreated" visibility="published" file="WebModuleUnit1.pas" line="22">
-        <parameters>
-          <parameter name="Sender" type="TCustomWebSessionManager" />
-          <parameter name="Request" type="TWebRequest" />
-          <parameter name="Session" type="TWebSession" />
-        </parameters>
-      </procedure>
-      <procedure name="WebModule1LoginAction" visibility="published" file="WebModuleUnit1.pas" line="24">
+      <field name="WebSessionManager" type="TWebSessionManager" visibility="published" size="4" offset="184" file="WebModuleUnit1.pas" line="13" />
+      <field name="HomePage" type="TWebStencilsProcessor" visibility="published" size="4" offset="188" file="WebModuleUnit1.pas" line="14" />
+      <field name="WebFormsAuthenticator" type="TWebFormsAuthenticator" visibility="published" size="4" offset="192" file="WebModuleUnit1.pas" line="15" />
+      <field name="LoginPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="196" file="WebModuleUnit1.pas" line="16" />
+      <field name="WebAuthorizer" type="TWebAuthorizer" visibility="published" size="4" offset="200" file="WebModuleUnit1.pas" line="17" />
+      <field name="WebFileDispatcher" type="TWebFileDispatcher" visibility="published" size="4" offset="204" file="WebModuleUnit1.pas" line="18" />
+      <field name="ForbiddenPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="208" file="WebModuleUnit1.pas" line="19" />
+      <field name="UserPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="212" file="WebModuleUnit1.pas" line="20" />
+      <field name="CounterPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="216" file="WebModuleUnit1.pas" line="21" />
+      <field name="WeatherPage" type="TWebStencilsProcessor" visibility="published" size="4" offset="220" file="WebModuleUnit1.pas" line="22" />
+      <procedure name="LoginAction" visibility="published" file="WebModuleUnit1.pas" line="23">
         <parameters>
           <parameter name="Sender" type="TObject" />
           <parameter name="Request" type="TWebRequest" />
@@ -465,7 +458,7 @@
           <parameter name="Handled" type="Boolean" paramflags="var" />
         </parameters>
       </procedure>
-      <procedure name="WebFormsAuthenticatorAuthenticate" visibility="published" file="WebModuleUnit1.pas" line="26">
+      <procedure name="WebFormsAuthenticatorAuthenticate" visibility="published" file="WebModuleUnit1.pas" line="25">
         <parameters>
           <parameter name="Sender" type="TCustomWebAuthenticator" />
           <parameter name="Request" type="TWebRequest" />
@@ -475,7 +468,7 @@
           <parameter name="Success" type="Boolean" paramflags="var" />
         </parameters>
       </procedure>
-      <procedure name="WebModule1ForbiddenAction" visibility="published" file="WebModuleUnit1.pas" line="29">
+      <procedure name="ForbiddenAction" visibility="published" file="WebModuleUnit1.pas" line="28">
         <parameters>
           <parameter name="Sender" type="TObject" />
           <parameter name="Request" type="TWebRequest" />
@@ -483,7 +476,7 @@
           <parameter name="Handled" type="Boolean" paramflags="var" />
         </parameters>
       </procedure>
-      <procedure name="WebModule1UserPageAction" visibility="published" file="WebModuleUnit1.pas" line="31">
+      <procedure name="UserPageAction" visibility="published" file="WebModuleUnit1.pas" line="30">
         <parameters>
           <parameter name="Sender" type="TObject" />
           <parameter name="Request" type="TWebRequest" />
@@ -491,7 +484,7 @@
           <parameter name="Handled" type="Boolean" paramflags="var" />
         </parameters>
       </procedure>
-      <procedure name="WebModule1HomeAction" visibility="published" file="WebModuleUnit1.pas" line="33">
+      <procedure name="HomeAction" visibility="published" file="WebModuleUnit1.pas" line="32">
         <parameters>
           <parameter name="Sender" type="TObject" />
           <parameter name="Request" type="TWebRequest" />
@@ -499,7 +492,7 @@
           <parameter name="Handled" type="Boolean" paramflags="var" />
         </parameters>
       </procedure>
-      <procedure name="WebModule1CounterAction" visibility="published" file="WebModuleUnit1.pas" line="35">
+      <procedure name="WeatherAction" visibility="published" file="WebModuleUnit1.pas" line="34">
         <parameters>
           <parameter name="Sender" type="TObject" />
           <parameter name="Request" type="TWebRequest" />
@@ -507,7 +500,15 @@
           <parameter name="Handled" type="Boolean" paramflags="var" />
         </parameters>
       </procedure>
-      <procedure name="WebModule1WeatherAction" visibility="published" file="WebModuleUnit1.pas" line="37">
+      <procedure name="CounterPostAction" visibility="published" file="WebModuleUnit1.pas" line="36">
+        <parameters>
+          <parameter name="Sender" type="TObject" />
+          <parameter name="Request" type="TWebRequest" />
+          <parameter name="Response" type="TWebResponse" />
+          <parameter name="Handled" type="Boolean" paramflags="var" />
+        </parameters>
+      </procedure>
+      <procedure name="CounterAction" visibility="published" file="WebModuleUnit1.pas" line="38">
         <parameters>
           <parameter name="Sender" type="TObject" />
           <parameter name="Request" type="TWebRequest" />
@@ -517,7 +518,7 @@
       </procedure>
     </members>
   </class>
-  <class name="TMessage" file="WebModuleUnit1.pas" line="45">
+  <class name="TCurrentModel" file="WebModuleUnit1.pas" line="46">
     <ancestor name="TObject" namespace="System">
       <methodref name="Create" visibility="public" procflags="constructor">
       </methodref>
@@ -595,11 +596,10 @@
       </propertyref>
     </ancestor>
     <members>
-      <field name="Fval" type="string" visibility="private" size="4" offset="4" file="WebModuleUnit1.pas" line="47" />
-      <property name="val" visibility="public" read="Fval" write="Fval" type="string" default="0" file="WebModuleUnit1.pas" line="49" />
+      <field name="CurrentCount" type="Integer" visibility="public" size="4" offset="4" file="WebModuleUnit1.pas" line="48" />
     </members>
   </class>
-  <class name="TWeatherForecast" file="WebModuleUnit1.pas" line="52">
+  <class name="TWeatherForecast" file="WebModuleUnit1.pas" line="51">
     <ancestor name="TObject" namespace="System">
       <methodref name="Create" visibility="public" procflags="constructor">
       </methodref>
@@ -677,19 +677,19 @@
       </propertyref>
     </ancestor>
     <members>
-      <field name="FDate" type="TDateTime" visibility="private" size="8" offset="8" file="WebModuleUnit1.pas" line="54" />
-      <field name="FTemperatureC" type="Integer" visibility="private" size="4" offset="16" file="WebModuleUnit1.pas" line="55" />
-      <field name="FSummary" type="string" visibility="private" size="4" offset="20" file="WebModuleUnit1.pas" line="56" />
-      <function name="GetTemperatureF" visibility="private" file="WebModuleUnit1.pas" line="57">
+      <field name="FDate" type="TDateTime" visibility="private" size="8" offset="8" file="WebModuleUnit1.pas" line="53" />
+      <field name="FTemperatureC" type="Integer" visibility="private" size="4" offset="16" file="WebModuleUnit1.pas" line="54" />
+      <field name="FSummary" type="string" visibility="private" size="4" offset="20" file="WebModuleUnit1.pas" line="55" />
+      <function name="GetTemperatureF" visibility="private" file="WebModuleUnit1.pas" line="56">
         <parameters>
           <retval type="Integer" />
         </parameters>
       </function>
-      <property name="Date" visibility="public" read="FDate" write="FDate" type="TDateTime" default="0" file="WebModuleUnit1.pas" line="59" />
-      <property name="TemperatureC" visibility="public" read="FTemperatureC" write="FTemperatureC" type="Integer" file="WebModuleUnit1.pas" line="60" />
-      <property name="Summary" visibility="public" read="FSummary" write="FSummary" type="string" default="0" file="WebModuleUnit1.pas" line="61" />
-      <property name="TemperatureF" visibility="public" read="GetTemperatureF" type="Integer" file="WebModuleUnit1.pas" line="62" />
+      <property name="Date" visibility="public" read="FDate" write="FDate" type="TDateTime" default="0" file="WebModuleUnit1.pas" line="58" />
+      <property name="TemperatureC" visibility="public" read="FTemperatureC" write="FTemperatureC" type="Integer" file="WebModuleUnit1.pas" line="59" />
+      <property name="Summary" visibility="public" read="FSummary" write="FSummary" type="string" default="0" file="WebModuleUnit1.pas" line="60" />
+      <property name="TemperatureF" visibility="public" read="GetTemperatureF" type="Integer" file="WebModuleUnit1.pas" line="61" />
     </members>
   </class>
-  <variable name="WebModuleClass" type="TComponentClass" visibility="public" file="WebModuleUnit1.pas" line="66" />
+  <variable name="WebModuleClass" type="TComponentClass" visibility="public" file="WebModuleUnit1.pas" line="65" />
 </namespace>

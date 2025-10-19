@@ -108,8 +108,8 @@
   <contains name="Winapi.StructuredQueryCondition" />
   <contains name="Winapi.MSXMLIntf" />
   <contains name="Winapi.ShlObj" />
-  <contains name="System.StrUtils" />
   <contains name="System.Masks" />
+  <contains name="System.StrUtils" />
   <contains name="Winapi.ActiveX" />
   <contains name="Winapi.Messages" />
   <contains name="System.Diagnostics" />

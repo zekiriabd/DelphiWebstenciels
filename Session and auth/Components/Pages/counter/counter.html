@@ -4,21 +4,23 @@
 
 @ExtraHeader {
     <title>Counter</title>
+    <link rel="stylesheet" href="./Components/Pages/counter/counter.css" />
 }
 
 <h1>Counter</h1>
 
-<div>
-  <p role="status">
-    Current count: <span id="counter-content">@App.val</span>
-  </p>
 
-  <button class="waves-effect waves-light btn blue darken-1"
-    hx-put="/counter?val=@App.val"
-    hx-target="#counter-content"
-    hx-swap="innerHTML">
-    Click me
-  </button>
+<div>
+    <form hx-post="/Counter"
+          hx-target="#counter-content"
+          hx-swap="outerHTML">
+
+        <p role="status">Current count:
+           <input class="inputlabel" name="count" type="text" id="counter-content" value="0">
+        </p>
+
+        <button type="submit" class="btn bg-danger text-white mt-2">Click me</button>
+    </form>
 </div>
 
 

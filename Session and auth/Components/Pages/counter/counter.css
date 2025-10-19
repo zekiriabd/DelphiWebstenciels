@@ -1,11 +1,13 @@
-﻿@LayoutPage ./Components/layout/mainLayout/mainLayout
-
-@page "/counter"
-
-@ExtraHeader {
-    <title>Counter</title>
+﻿
+.inputlabel {
+  border: none !important;           /* بدون حدود */
+  background: transparent !important;   /* خلفية شفافة */
+  color: inherit !important;           /* نفس لون النص المحيط */
+  pointer-events: none !important;      /* لا يمكن التفاعل معه */
+  outline: none !important;             /* بدون تحديد عند التركيز */
+  font-size: 1em !important;            /* نفس حجم النص */
+  padding: 0 !important;               /* إزالة الهوامش الداخلية */
+  width: auto !important;               /* يتمدد حسب المحتوى */
+  appearance: none !important;         /* إلغاء شكل المتصفح الافتراضي */
 }
-
-<h3>Hello, world!</h3>
-Welcome to your new app.
 

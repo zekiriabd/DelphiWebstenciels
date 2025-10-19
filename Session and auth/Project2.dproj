@@ -131,7 +131,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="WebModuleUnit1.pas">
-            <Form>WebModule1</Form>
+            <Form>Controller</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
@@ -152,6 +152,7 @@
         <None Include="Components\Pages\weather\weather.css"/>
         <None Include="Components\Pages\weather\weather.html"/>
         <None Include="Components\Pages\weather\weather.js"/>
+        <None Include="Components\Pages\counter\_counterPartial.html"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -197,6 +198,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Components\Layout\navmenu\navmenu.html" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Components\Pages\counter\_counterPartial.html" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

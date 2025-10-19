@@ -4,11 +4,12 @@ interface
 
 uses
   System.SysUtils, System.Classes, Web.HTTPApp, Web.Stencils,
-  System.Generics.Collections,System.Threading, DateUtils;
+  System.Generics.Collections,System.Threading, DateUtils,
+  System.IOUtils;
 
 type
 
-  TWebModule1 = class(TWebModule)
+  TController = class(TWebModule)
     WebSessionManager: TWebSessionManager;
     HomePage: TWebStencilsProcessor;
     WebFormsAuthenticator: TWebFormsAuthenticator;
@@ -19,22 +20,22 @@ type
     UserPage: TWebStencilsProcessor;
     CounterPage: TWebStencilsProcessor;
     WeatherPage: TWebStencilsProcessor;
-    procedure WebSessionManagerCreated(Sender: TCustomWebSessionManager;
-      Request: TWebRequest; Session: TWebSession);
-    procedure WebModule1LoginAction(Sender: TObject; Request: TWebRequest;
+    procedure LoginAction(Sender: TObject; Request: TWebRequest;
       Response: TWebResponse; var Handled: Boolean);
     procedure WebFormsAuthenticatorAuthenticate(
       Sender: TCustomWebAuthenticator; Request: TWebRequest; const UserName,
       Password: string; var Roles: string; var Success: Boolean);
-    procedure WebModule1ForbiddenAction(Sender: TObject; Request: TWebRequest;
+    procedure ForbiddenAction(Sender: TObject; Request: TWebRequest;
       Response: TWebResponse; var Handled: Boolean);
-    procedure WebModule1UserPageAction(Sender: TObject; Request: TWebRequest;
+    procedure UserPageAction(Sender: TObject; Request: TWebRequest;
       Response: TWebResponse; var Handled: Boolean);
-    procedure WebModule1HomeAction(Sender: TObject; Request: TWebRequest;
+    procedure HomeAction(Sender: TObject; Request: TWebRequest;
       Response: TWebResponse; var Handled: Boolean);
-    procedure WebModule1CounterAction(Sender: TObject; Request: TWebRequest;
+    procedure WeatherAction(Sender: TObject; Request: TWebRequest;
       Response: TWebResponse; var Handled: Boolean);
-    procedure WebModule1WeatherAction(Sender: TObject; Request: TWebRequest;
+    procedure CounterPostAction(Sender: TObject; Request: TWebRequest;
+      Response: TWebResponse; var Handled: Boolean);
+    procedure CounterAction(Sender: TObject; Request: TWebRequest;
       Response: TWebResponse; var Handled: Boolean);
   private
     { Private declarations }
@@ -42,11 +43,9 @@ type
     { Public declarations }
   end;
 
-  TMessage = class
-  private
-    Fval : string;
+  TCurrentModel = class
   public
-    property val:string read Fval write Fval;
+    CurrentCount : integer;
   end;
 
   TWeatherForecast = class
@@ -63,7 +62,7 @@ type
   end;
 
 var
-  WebModuleClass: TComponentClass = TWebModule1;
+  WebModuleClass: TComponentClass = TController;
 
 implementation
 
@@ -77,13 +76,7 @@ begin
 end;
 
 
-procedure TWebModule1.WebSessionManagerCreated(
-  Sender: TCustomWebSessionManager; Request: TWebRequest; Session: TWebSession);
-begin
-  Session.DataVars.Values['UserName'] := 'Zekiri Abdelali';
-end;
-
-procedure TWebModule1.WebFormsAuthenticatorAuthenticate(
+procedure TController.WebFormsAuthenticatorAuthenticate(
   Sender: TCustomWebAuthenticator; Request: TWebRequest; const UserName,
   Password: string; var Roles: string; var Success: Boolean);
 begin
@@ -105,52 +98,46 @@ end;
 
 
 
-procedure TWebModule1.WebModule1CounterAction(Sender: TObject;
+procedure TController.CounterAction(Sender: TObject;
   Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
-var
-  App: TMessage;
-  NewVal: Integer;
+  var Model : TCurrentModel;
 begin
-  App := TMessage.Create;
-  try
-    App.val := Request.QueryFields.Values['val'];
-    if(App.val = '') then
-      NewVal := 0
-    else
-      NewVal := StrToIntDef(App.val, 0) + 1;
-
-    App.val := IntToStr(NewVal);
-    CounterPage.AddVar('App', App, False);
-    Response.Content := CounterPage.Content;
-    Handled := true;
-  finally
-   App.Free;
-  end;
+   Model := TCurrentModel.Create;
+   Model.CurrentCount := 0;
+   CounterPage.AddVar('Model', Model, False);
+   Response.Content :=  CounterPage.Content;
+   Handled := True;
 end;
 
+procedure TController.CounterPostAction(Sender: TObject;
+  Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
+  var  Count : integer;
+begin
+  var val := Request.ContentFields.Values['count'];
+  Response.Content := Format('<input class="inputlabel" name="count" type="text" id="counter-content" value="%d">',
+  [StrToIntDef(val, 0) +1]);
+end;
 
-
-
-procedure TWebModule1.WebModule1ForbiddenAction(Sender: TObject;
+procedure TController.ForbiddenAction(Sender: TObject;
   Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
 begin
   Response.Content := ForbiddenPage.Content;
 end;
 
-procedure TWebModule1.WebModule1HomeAction(Sender: TObject;
+procedure TController.HomeAction(Sender: TObject;
   Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
 begin
     Response.Content := HomePage.Content;
 end;
 
-procedure TWebModule1.WebModule1LoginAction(Sender: TObject;
+procedure TController.LoginAction(Sender: TObject;
   Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
 begin
  Response.Content := LoginPage.Content;
 
 end;
 
-procedure TWebModule1.WebModule1UserPageAction(Sender: TObject;
+procedure TController.UserPageAction(Sender: TObject;
   Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
 begin
    Response.Content := UserPage.Content;
@@ -184,7 +171,7 @@ begin
       end;
 end;
 
-procedure TWebModule1.WebModule1WeatherAction(Sender: TObject;
+procedure TController.WeatherAction(Sender: TObject;
   Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
   var
   Forecasts : TObjectList<TWeatherForecast>;
